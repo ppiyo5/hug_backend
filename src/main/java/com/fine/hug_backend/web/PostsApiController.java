@@ -4,6 +4,7 @@ import com.fine.hug_backend.service.posts.PostsService;
 import com.fine.hug_backend.web.dto.PostsResponseDto;
 import com.fine.hug_backend.web.dto.PostsSaveRequestDto;
 import com.fine.hug_backend.web.dto.PostsUpdateRequestDto;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ public class PostsApiController {
 
     private final PostsService postsService;
 
+    @ApiOperation("글 작성")
     @PostMapping("/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto) {
         return postsService.save(requestDto);

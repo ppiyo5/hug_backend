@@ -5,7 +5,6 @@ import com.fine.hug_backend.domain.posts.Posts;
 import com.fine.hug_backend.domain.posts.PostsRepository;
 import com.fine.hug_backend.web.dto.PostsSaveRequestDto;
 import com.fine.hug_backend.web.dto.PostsUpdateRequestDto;
-import javafx.geometry.Pos;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -76,8 +75,8 @@ public class PostsApiControllerTest {
 
         //when
         mvc.perform(post(url)
-        .contentType(MediaType.APPLICATION_JSON_UTF8)
-        .content(new ObjectMapper().writeValueAsString(requestDto)))
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());
 //        ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, requestDto, Long.class);
 
@@ -115,8 +114,8 @@ public class PostsApiControllerTest {
 
         //when
         mvc.perform(put(url)
-        .contentType(MediaType.APPLICATION_JSON_UTF8)
-        .content(new ObjectMapper().writeValueAsString(requestDto)))
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());
 //        ResponseEntity<Long> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestDtoHttpEntity, Long.class);
 
